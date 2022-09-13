@@ -1,18 +1,25 @@
-let Toes = 0
 let RandomNumber = 0
+let Toes = 0
 input.onButtonPressed(Button.A, function () {
-    Toes = randint(0, 1)
-    if (true) {
-        Toes = 0
-        while (Toes <= 4) {
-            Toes += 1
-            basic.showIcon(IconNames.Happy)
-        }
-        basic.showNumber(Toes)
+    RandomNumber = randint(0, 1)
+    if (RandomNumber == 0) {
+        basic.showString("Turth")
+    } else {
+        basic.showString("Dare")
     }
 })
-input.onGesture(Gesture.Shake, function () {
-    RandomNumber = randint(0, 3)
+input.onButtonPressed(Button.B, function () {
+    Toes = randint(0, 3)
+    if (Toes == 0) {
+        basic.showArrow(ArrowNames.North)
+    } else if (Toes == 1) {
+        basic.showArrow(ArrowNames.South)
+    } else if (Toes == 2) {
+        basic.showArrow(ArrowNames.West)
+    } else {
+        basic.showArrow(ArrowNames.East)
+    }
+    basic.clearScreen()
 })
 basic.forever(function () {
 	
